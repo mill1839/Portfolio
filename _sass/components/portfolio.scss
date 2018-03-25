@@ -1,0 +1,30 @@
+.portfolio {
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
+  @include flex-display();
+}
+
+.project-tile {
+  @include flex(1 0 auto);
+  height: 300px;
+
+  &:nth-child(5n + 2) {
+    margin: 0 2rem;
+  }
+
+  &:nth-child(5n + 4) {
+    @include flex(0 0 50%);
+
+    & > * {
+      margin-right: 1rem;
+    }
+  }
+
+  &:nth-child(5n + 5) {
+    @include flex(0 0 50%);
+
+    & > * {
+      margin-left: 1rem;
+    }
+  }
+}

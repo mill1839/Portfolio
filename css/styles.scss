@@ -1,3 +1,11 @@
 ---
 ---
+@import 'variables-mixins';
+@import 'general-styles';
+
 @import 'layout/header';
+@import 'layout/footer';
+
+@import 'components/portfolio';
+@import 'components/project';
+@import 'components/about';

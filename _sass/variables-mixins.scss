@@ -1,0 +1,140 @@
+// MAIN COLORS
+$emerald-green: #009777;
+$charcoal: #231F20;
+$light-grey: #FBFBFB;
+
+$regular: 'Geogrotesque-Regular', helvetica, sans-serif;
+$ultra-light: 'Geogrotesque-UltraLight', helvetica, sans-serif;
+$ultra-light-italic: 'Geogrotesque-UltraLightItalic', helvetica, sans-serif;
+$ultra-semi-bold: 'Geogrotesque-SemiBold', helvetica, sans-serif;
+
+@font-face {
+  font-family: 'Geogrotesque-UltraLight';
+  src: url('Geogrotesque-UltraLight.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geogrotesque-UltraLightItalic';
+  src: url('Geogrotesque-UltraLightItalic.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geogrotesque-Regular';
+  src: url('Geogrotesque-Regular.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geogrotesque-SemiBold';
+  src: url('Geogrotesque-SemiBold.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// MIXINS
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1,) {
+  -webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+  -moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+  box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
+// BORDER RADIUS
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// DROP SHADOWS
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// SIZING SHORTCUTS
+@mixin size($height, $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin transitions($t){
+  -webkit-transition: all $t; /* For Safari 3.1 to 6.0 */
+  transition: all $t;
+}
+
+@mixin rotate($d){
+  -webkit-transform:rotate($d);
+  transform:rotate($d);
+}
+
+@mixin skew($d){
+  -webkit-transform: skew($d);
+  transform: skew($d);
+}
+
+@mixin transform($a, $b) {
+  -webkit-transform: translate($a, $b);
+      -ms-transform: translate($a, $b);
+}
+
+// FLEXBOX
+@mixin flex-display() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+          justify-content: $justify;
+}
+
+@mixin align-items($align-item) {
+  -webkit-box-align: $align-item;
+-webkit-align-items: $align-item;
+     -ms-flex-align: $align-item;
+        align-items: $align-item;
+}
+
+@mixin align-self($align-self) {
+	-webkit-box-align-self: $align-self;
+	-webkit-align-self: $align-self;
+	-ms-flex-align-self: $align-self;
+	align-self: $align-self;
+}
+
+@mixin flex-wrap($a) {
+     -ms-flex-wrap: $a;
+         flex-wrap: $a;
+}
+
+@mixin flex($a) {
+      -webkit-flex: $a;
+          -ms-flex: $a;
+              flex: $a;
+}
+
+@mixin flex-direction($direction) {
+    -webkit-box-direction: normal;
+-webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+        flex-direction: $direction;
+}
+
+// TEXT TRUNCATE
+@mixin truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

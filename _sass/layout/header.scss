@@ -1,0 +1,41 @@
+header {
+  margin: 5rem 0 0;
+}
+
+.name-img {
+  background: url('../img/name-img.png') no-repeat left top;
+  background-size: contain;
+  width: 125px;
+  height: 60px;
+}
+
+nav {
+  margin: 3rem 0;
+
+  ul {
+    list-style: none;
+    @include flex-display();
+    @include justify-content(center);
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0 2rem;
+    }
+
+    a {
+      text-transform: uppercase;
+      font: 20px/24px $regular;
+      color: $charcoal;
+
+      &:hover {
+        color: $emerald-green;
+        
+      }
+    }
+
+    .active {
+      font-family: $ultra-semi-bold;
+    }
+  }
+}

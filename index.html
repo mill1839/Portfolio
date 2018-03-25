@@ -1,5 +1,20 @@
 ---
 layout: default
 ---
-
-<div>this is placeholder for what html/content i want on my home page!!!</div>
+<section class="portfolio">
+{% for project in site.projects %}
+<div class="project-tile">
+  <div class="project-img">
+    <a href="{{ project.url }}"></a>
+  </div>
+  <p class="project-title">{{ project.title }}</p>
+  <p class="design-categories">
+    {% assign types = "branding,web design,letterpress,print" | split: ',' %}
+    {% for type in types %}
+    {% assign projects = site.projects | where:"type",type %}
+    {{ type }}
+    {% endfor %}
+  </p>
+</div>
+{% endfor %}
+</section>
